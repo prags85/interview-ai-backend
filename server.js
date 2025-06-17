@@ -38,6 +38,11 @@ app.post("/api/ai/generate-explanation", protect, generateConceptExplanation);
 // Static files
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
+app.get("/", (req, res) => {
+  res.send("Backend is live ✅");
+});
+
+
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
